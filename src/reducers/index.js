@@ -14,7 +14,7 @@ const linksNav = {
     employers: { id: 'employers', text: 'employers', state: 'deactive' },
     contact: { id: 'contact', text: 'contact us', state: 'deactive' },
   },
-  allIds: ['home', 'aboutUs', 'jobs', 'clients', 'employers', 'contact'],
+  allIds: ["contact", "employers", "clients", "jobs", "aboutUs", "home"],
 };
 
 const linksNavState = handleActions({

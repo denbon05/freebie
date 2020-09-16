@@ -1,0 +1,101 @@
+@mixin media {
+  @media screen and (max-device-width: 1200px) {
+    
+  }
+
+  @media screen and (max-device-width: 992px) {
+    .headerGrid {
+      height: 70vh;
+      grid-template-rows: repeat(2, 1fr);
+      .navBar {
+      display: flex;
+      flex-wrap: wrap;
+  
+        .brand{
+          flex-basis: 100%;
+          justify-content: flex-start;
+        }
+    
+        .containerNavLinks {
+          flex-basis: 100%;
+          justify-content: center;
+        }
+      }
+
+      // NAV FORM
+
+      .navForm {
+        flex-wrap: wrap;
+      
+        .searchInput {
+          flex-basis: 75%;
+        }
+      
+        .buttonSearch {
+          flex-basis: 20%;
+        }
+      }
+
+      .navCheckboxs {
+        flex-basis: 65%;
+        display: flex;
+        justify-content: space-between;
+    
+        .checkboxs {
+          flex-basis: 100%;
+          display: inline-block;
+          flex-shrink: 0;
+        }
+    
+        .navDropChose {
+          flex-basis: 30%;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-device-width: 768px) {
+    .headerGrid {
+      .navForm {
+        height: 40vh;
+        flex-wrap: wrap;
+        
+        h1 {
+          flex-basis: 80%;
+        }
+      
+        .searchInput {
+          flex-basis: 100%;
+        }
+      
+        .buttonSearch {
+          flex-basis: 30%;
+          order: 20;
+        }
+
+        .navCheckboxs {
+          order: 10;
+          flex-basis: 60%;
+          display: flex;
+          justify-content: space-between;
+          flex-wrap: wrap;
+      
+          .checkboxs {
+            flex-basis: 100%;
+            display: inline-block;
+            flex-shrink: 0;
+          }
+      
+          .navDropChose {
+            order: -1;
+            flex-basis: 90%;
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-device-width: 576px) {
+
+  }
+}

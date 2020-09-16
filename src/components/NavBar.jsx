@@ -22,7 +22,7 @@ class NavBar extends React.Component {
   renderLinkNav() {
     const { links, clickOnNavLink } = this.props;
     return links.map(({ state, id, text }) => {
-      const classes = cn({
+      const classes = cn('itemNavLink', {
         activeNavLink: state === 'active',
         disabled: state === 'active',
       });
@@ -42,52 +42,50 @@ class NavBar extends React.Component {
   render() {
 
     return (
-      <div className="bgHeader container">
-        <Navbar className="row">
-          <Navbar.Brand href="#home" className="col-4">
+      <div className="headerGrid bgHeader">
+        <Navbar className="navBar">
+          <Navbar.Brand href="#home" className="brand">
             <img
               src={logo}
               width="133"
               height="45"
-              className="d-inline-block align-top"
-              alt="React Bootstrap logo"
+              className=""
+              alt="logo"
             />
           </Navbar.Brand>
-          <Navbar.Collapse id="responsive-navbar-nav" className="col-8">
-            <Nav>
+          <Navbar.Collapse className="containerNavLinks">
+            <Nav className="flexNavLinks">
               {this.renderLinkNav()}
             </Nav>
           </Navbar.Collapse>
         </Navbar>
-        
-        <div id="allSearchForm">
-          <div className="containerForm container">            
-            <Form id="searchForm" className="row">
-              <h1 id="hSearchForm" className="col-8">I'm looking for..</h1>  
-              <Form.Control type="search" id="searchInput" size="lg" placeholder="Enter a Job Description" />
-              <Button variant="info" id="buttonSearch" type="submit">
-                <FontAwesome
-                  className='super-crazy-colors'
-                  name='search'
-                  style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
-                />{' '}
-                  Search
-              </Button>
-              <div key={`inline-checkbox`} className="mb-3">
-                <Form.Check inline type='checkbox' className='inlineCheckbox1' label="Full Time" />
-                <Form.Check inline type='checkbox' className='inlineCheckbox2' label="Part Time / Casual / Freelance" />
-                <Form.Group controlId="formGridState">
-                <Form.Control size="sm" as="select" defaultValue="Choose...">
-                  <option>Choose...</option>
-                  <option>...</option>
-                </Form.Control>
-              </Form.Group>
-              </div>
-              
-              
-            </Form>
+
+        <Form className="navForm">
+          <h1 className="">I'm looking for..</h1>  
+          <Form.Control type="search" className="searchInput" size="lg" placeholder="Enter a Job Description" />
+          <Button className="buttonSearch" variant="info" type="submit" size="lg">
+            <FontAwesome
+              className='super-crazy-colors'
+              name='search'
+              style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
+            />{' '}
+              Search
+          </Button>
+          <div className="navCheckboxs">
+          <div className="checkboxs">
+            <Form.Check inline type='checkbox' className='checkbox1' label="Full Time" />
+            <Form.Check inline type='checkbox' className='checkbox2' label="Part Time / Casual / Freelance" />
           </div>
-        </div>
+           <Form.Group controlId="formGridState" className="navDropChose">
+              <Form.Control size="sm" as="select" defaultValue="Choose...">
+                <option>Choose...</option>
+                <option>...</option>
+              </Form.Control>
+            </Form.Group>
+          </div>
+          
+          
+        </Form>
       </div>
     );
   }

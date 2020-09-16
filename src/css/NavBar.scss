@@ -1,0 +1,179 @@
+@import "./default-values.scss";
+@import "./media.scss";
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.headerGrid {
+  padding: 5vh 10vw;
+  background-image: url('../images/header_img_bg.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100vw;
+  @include headerHeight;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-areas: 
+    "navBar navBar navBar navBar navBar navBar"
+    "navForm navForm navForm navForm navForm navForm";
+
+  align-items: start;
+
+  .navBar {
+    grid-area: navBar;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 0;
+
+    .brand{
+      cursor: default;
+      flex-basis: 40%;
+      img:hover {
+        cursor: pointer;
+      }
+    }
+
+    .containerNavLinks {
+      flex-basis: 40%;
+      justify-content: center;
+
+      .flexNavLinks {
+        width: 100%;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+
+        .itemNavLink {
+          color: white;
+          height: 11px;
+          font-family: $fontDefault;
+          font-size: px-to-rem(14px);
+          font-weight: 500;
+          line-height: 25px;
+          text-transform: uppercase;
+
+          &:hover {
+            text-shadow: rgba(0, 191, 255, 0.575) 2px 2px 3px;
+            font-weight: 600;
+          }
+        }
+
+        .activeNavLink{
+          border-top: 4px solid #4acaff;
+          padding-top: 3px;
+          border-width: thick;
+          border-radius: 1px;
+        }
+      }
+    }
+  }
+
+  // NAV FORM
+
+  .navForm {
+    margin-top: 5vh;
+    grid-area: navForm;
+    display: flex;
+    height: 30vh;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    h1 {
+      flex-basis: 70%;
+      color: white;
+      font-style: italic;
+      font-weight: 400;
+    }
+
+    .searchInput {
+      flex-basis: 75%;
+    }
+
+    .buttonSearch {
+      flex-basis: 20%;
+    }
+
+    .navCheckboxs {
+      flex-basis: 75%;
+      display: flex;
+      justify-content: space-between;
+
+      .checkboxs {
+        flex-basis: 60%;
+        display: inline-block;
+        flex-shrink: 0;
+
+        label.form-check-label {
+          color: white;
+          font-family: $fontDefault;
+          font-weight: 400;
+        }
+      }
+
+      .navDropChose {
+        flex-basis: 30%;
+      }
+    }
+  }
+}
+
+
+@include media;
+// .navbar-brand, #responsive-navbar-nav{
+//   padding: 10px;
+// }
+// #responsive-navbar-nav{
+//   margin: auto;
+//   margin-top: 0;
+// }
+// .nav-link{
+//   height: 11px;
+//   color: #ffffff !important;
+//   font-family: "Gotham Rounded";
+//   font-size: 14px;
+//   font-weight: 500;
+//   line-height: 25px;
+//   text-transform: uppercase;
+// }
+// .nav-link:hover{
+//   text-shadow: rgba(0, 191, 255, 0.575) 2px 2px 3px;
+//   font-weight: 600;
+// }
+// .activeNavLink{
+//   border-top: 4px solid #4acaff;
+//   padding-top: 3px;
+//   border-width: thick;
+//   border-radius: 1px;
+// }
+// /* nav form */
+// #allSearchForm{
+//   display: grid;
+//   height: 60vh;
+// }
+// .containerForm{
+//   display: grid;
+//   grid-template-areas: 
+//     "titleForm titleForm titleForm"
+//     "search search search buttonSearch";
+//   grid-template-rows: 1fr 1fr 1fr;
+//   grid-template-columns: 3fr 1fr;
+//   grid-column-gap: 4vw;
+//   grid-row-gap: 3vh;
+//   height: 100vh;
+//   margin: 0;
+//   /* justify-self: center; */
+// }
+// #hSearchForm{
+//   grid-area: titleForm;
+// }
+// #buttonSearch{
+//   grid-area: buttonSearch;
+// }
+// #searchInput{
+//   grid-area: search;
+// }

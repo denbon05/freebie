@@ -1,0 +1,17 @@
+$rem-base: 16px;
+$fontDefault: Gotham Rounded;
+$default-line-height: 1.15;
+
+@mixin headerHeight {
+  height: 100vh;
+}
+
+@function px-to-rem($list) {
+  $result: ();
+
+  @each $value in $list {
+    $result: append($result, (($value / $rem-base) * 1rem));
+  }
+
+  @return #{$result};
+}
