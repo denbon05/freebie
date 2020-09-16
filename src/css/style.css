@@ -71,9 +71,12 @@ body {
       display: flex;
       justify-content: space-between; }
       .headerGrid .navForm .navCheckboxs .checkboxs {
-        flex-basis: 60%;
-        display: inline-block;
-        flex-shrink: 0; }
+        flex-basis: 70%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: baseline;
+        flex-shrink: 0;
+        white-space: nowrap; }
         .headerGrid .navForm .navCheckboxs .checkboxs label.form-check-label {
           color: white;
           font-family: Gotham Rounded;
@@ -81,8 +84,15 @@ body {
       .headerGrid .navForm .navCheckboxs .navDropChose {
         flex-basis: 30%; }
 
+@media screen and (max-device-width: 1200px) {
+  .headerGrid .navBar .brand {
+    flex-basis: 30%; }
+  .headerGrid .navBar .containerNavLinks {
+    flex-basis: 40%; } }
+
 @media screen and (max-device-width: 992px) {
   .headerGrid {
+    padding: 2vh 5vw;
     height: 70vh;
     grid-template-rows: repeat(2, 1fr); }
     .headerGrid .navBar {
@@ -121,7 +131,8 @@ body {
       flex-basis: 100%; }
     .headerGrid .navForm .buttonSearch {
       flex-basis: 30%;
-      order: 20; }
+      order: 20;
+      align-self: center; }
     .headerGrid .navForm .navCheckboxs {
       order: 10;
       flex-basis: 60%;
@@ -135,3 +146,29 @@ body {
       .headerGrid .navForm .navCheckboxs .navDropChose {
         order: -1;
         flex-basis: 90%; } }
+
+@media screen and (max-device-width: 576px) {
+  .headerGrid {
+    padding: 2vh 3vw; }
+    .headerGrid .navBar {
+      flex-direction: row; }
+      .headerGrid .navBar .containerNavLinks {
+        flex-basis: 100%;
+        justify-content: center; }
+        .headerGrid .navBar .containerNavLinks .flexNavLinks {
+          width: 100%;
+          height: 5rem;
+          display: flex;
+          flex-wrap: wrap;
+          flex-direction: row-reverse;
+          justify-content: space-between;
+          align-items: center; }
+          .headerGrid .navBar .containerNavLinks .flexNavLinks .itemNavLink {
+            flex-basis: 33.3%;
+            text-align: center; }
+    .headerGrid .navForm {
+      margin-top: -10vh;
+      height: 35vh; }
+      .headerGrid .navForm .buttonSearch {
+        flex-basis: 150px;
+        flex-shrink: 0; } }

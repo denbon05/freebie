@@ -104,9 +104,12 @@ body {
       justify-content: space-between;
 
       .checkboxs {
-        flex-basis: 60%;
-        display: inline-block;
+        flex-basis: 70%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: baseline;
         flex-shrink: 0;
+        white-space: nowrap;
 
         label.form-check-label {
           color: white;
@@ -124,56 +127,6 @@ body {
 
 
 @include media;
-// .navbar-brand, #responsive-navbar-nav{
-//   padding: 10px;
-// }
-// #responsive-navbar-nav{
-//   margin: auto;
-//   margin-top: 0;
-// }
-// .nav-link{
-//   height: 11px;
-//   color: #ffffff !important;
-//   font-family: "Gotham Rounded";
-//   font-size: 14px;
-//   font-weight: 500;
-//   line-height: 25px;
-//   text-transform: uppercase;
-// }
-// .nav-link:hover{
-//   text-shadow: rgba(0, 191, 255, 0.575) 2px 2px 3px;
-//   font-weight: 600;
-// }
-// .activeNavLink{
-//   border-top: 4px solid #4acaff;
-//   padding-top: 3px;
-//   border-width: thick;
-//   border-radius: 1px;
-// }
-// /* nav form */
-// #allSearchForm{
-//   display: grid;
-//   height: 60vh;
-// }
-// .containerForm{
-//   display: grid;
-//   grid-template-areas: 
-//     "titleForm titleForm titleForm"
-//     "search search search buttonSearch";
-//   grid-template-rows: 1fr 1fr 1fr;
-//   grid-template-columns: 3fr 1fr;
-//   grid-column-gap: 4vw;
-//   grid-row-gap: 3vh;
-//   height: 100vh;
-//   margin: 0;
-//   /* justify-self: center; */
-// }
-// #hSearchForm{
-//   grid-area: titleForm;
-// }
-// #buttonSearch{
-//   grid-area: buttonSearch;
-// }
-// #searchInput{
-//   grid-area: search;
-// }
+
+//  MAIN
+
