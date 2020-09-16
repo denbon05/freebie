@@ -44,7 +44,7 @@ const linksNavState = handleActions({
 
 const formJobState = handleActions({
   [actions.onNavForm](state) {
-    state.buttonSearch = state.buttonSearch === 'waiting' ? 'disabled' : 'waiting';
+    state.buttonSearch = 'disabled';
     (async () => {
       const where = encodeURIComponent(JSON.stringify({ "title": state.inputValue }));
       const response = await fetch(
@@ -56,11 +56,12 @@ const formJobState = handleActions({
           }
         }
       );
+      if (await response.ok) state.buttonSearch = 'waiting';
       const data = await response.json();
       state.findedJobs = [ ...data.results ];
       console.log(JSON.stringify(data, null, 2));
+      return { ...state };
     })();
-    return { ...state };
   },
   [actions.onChangeSearchJob](state, { payload: { value } }) {
     state.inputValue = value;

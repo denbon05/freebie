@@ -57,9 +57,9 @@ body {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: flex-start; }
-    .headerGrid .navForm h1 {
+    .headerGrid .navForm h1.h1Searching {
       flex-basis: 70%;
-      color: white;
+      color: white !important;
       font-style: italic;
       font-weight: 400; }
     .headerGrid .navForm .searchInput {

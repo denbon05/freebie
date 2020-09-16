@@ -88,7 +88,7 @@ class NavBar extends React.Component {
         </Navbar>
 
         <Form onSubmit={(e) => this.handleJobSubmit(e)} className="navForm">
-          <h1 className="">I'm looking for..</h1>  
+          <h1 className="h1Searching">I'm looking for..</h1>  
           <Form.Control
             onChange={(e) => this.handlerSearch(e)}
             type="search"

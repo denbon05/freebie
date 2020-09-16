@@ -83,9 +83,9 @@ body {
     justify-content: space-between;
     align-items: flex-start;
 
-    h1 {
+    h1.h1Searching {
       flex-basis: 70%;
-      color: white;
+      color: white !important;
       font-style: italic;
       font-weight: 400;
     }
