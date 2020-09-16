@@ -26,8 +26,6 @@ const formState = {
   findedJobs: [],
 }
 
-const buttonFindMoreState = { buttonState: 'waiting' };
-
 const linksNavState = handleActions({
   [actions.clickOnNavLink](state, { payload: { id } }) {
     const { linksById, allIds } = state;
@@ -79,10 +77,9 @@ const formJobState = handleActions({
 
 const buttonFindMore = handleActions({
   [actions.clickFindMore](state) {
-    const { buttonFindMoreState } = state.buttonFindMore;
-    return buttonFindMoreState === 'waiting' ? 'active' : 'waiting';
+    return state === 'waiting' ? 'active' : 'waiting';
   }
-}, buttonFindMoreState);
+}, 'waiting');
 
 export default combineReducers({
   linksNavState,

@@ -63,10 +63,9 @@ class NavBar extends React.Component {
     choosingCoutnry({ value });
   }
 
-  render() {console.log(this.props);
+  render() {
     const { buttonSearch } = this.props.formJobState;
     const disabledButton = buttonSearch === 'disabled';
-    console.log(disabledButton, buttonSearch)
 
     return (
       <div className="headerGrid bgHeader">
