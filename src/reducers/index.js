@@ -83,7 +83,7 @@ const buttonFindMore = handleActions({
 
 const mailField = handleActions({
   [actions.subscribe](state) {
-    const { mailText, emailsIds, emailByID } = state;
+    const { mailText, emailsIds } = state;
     state.subscribeOn = true;
     const id = _.uniqueId();
     state.emailByID[id] = { mail: mailText, id };
