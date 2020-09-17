@@ -192,6 +192,13 @@ body {
       font-weight: 400;
       line-height: 25px;
       line-height: 25px;
+      &:-webkit-autofill,
+      &:-webkit-autofill:hover, 
+      &:-webkit-autofill:focus, 
+      &:-webkit-autofill:active  {
+        -webkit-box-shadow: 0 0 0 30px #131c25 inset !important;
+        -webkit-text-fill-color: white !important;
+      }
       &::-moz-placeholder { color: white; };
       &::-webkit-input-placeholder { color: white; };
     }
@@ -200,6 +207,11 @@ body {
       position: absolute;
       top: 15%;
       right: 5%;
+      display: inline-block;
+      border: none;
+      text-decoration: none;
+      background: #131c25;
+      cursor: pointer;
   
       .mailIcon {
         width: 1.5rem;

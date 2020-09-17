@@ -5,7 +5,13 @@ import mailIcon from '../images/mail-solid.png';
 import * as actions from '../actions/index.js';
 import '../css/style.css';
 
-const mapStateToProps = ({ mailField: { mailText } }) => ({ mailText });
+const mapStateToProps = (state) => {
+  const props = {
+    mailText: state.mailField.mailText,
+    subscribeOn: state.mailField.subscribeOn,
+  };
+  return props;
+};
 
 const actionCreators = {
   fillMail: actions.fillMail,
@@ -21,25 +27,31 @@ class Footer extends React.Component {
 
   handlerMailChange = ({ target: { value } }) => {
     const { fillMail } = this.props;
-    fillMail(value);
-    
+    fillMail({ value });
   }
 
-  render() {
-    console.log(this.props);
+  render() {console.log(this.props)
+    const { subscribeOn } = this.props;
 
     return (
       <div className="footerContainer">
         <h6 className="footerHeader">Subscribe to our Job Seeker Mailing List</h6>
         <Form encType="application/x-www-form-urlencoded" onSubmit={(e) => this.handleSubscribrMail(e)} className="footerForm">
           <Form.Control
+            spellCheck="false"
+            required
+            autoCorrect="off"
+            autoCapitalize="off"
+            autoComplete="email"
             onChange={(e) => this.handlerMailChange(e)}
-            type="search"
+            type="email"
             className="mailInput"
             size="lg"
             placeholder="Enter Your Email Address"
           />
-          <a className="mailButton" href="#"><img className="mailIcon" src={mailIcon}></img></a>
+          <button disabled={subscribeOn} className="mailButton">
+            <img alt="mail" className="mailIcon" src={mailIcon} />
+          </button>
         </Form>
       </div>
     );

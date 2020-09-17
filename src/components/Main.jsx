@@ -13,7 +13,6 @@ const actionCreators = {
 class Main extends React.Component {
 
   render() {
-    console.log(this.props);
 
     return (
       <div className="mainContainerFlex">
@@ -25,7 +24,7 @@ class Main extends React.Component {
           by creativity and that reflects on the type of jobs we recruit for.
         </p>
         <a
-          href="#"
+          href="#more"
           className="aButtonFindMore"
         >
           FIND OUT MORE ABOUT US!

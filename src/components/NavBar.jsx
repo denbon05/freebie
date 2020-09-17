@@ -86,9 +86,10 @@ class NavBar extends React.Component {
           </Navbar.Collapse>
         </Navbar>
 
-        <Form encType="text/plain" /*action=""*/ onSubmit={(e) => this.handleJobSubmit(e)} className="navForm">
+        <Form encType="text/plain" onSubmit={(e) => this.handleJobSubmit(e)} className="navForm">
           <h1 className="h1Searching">I'm looking for..</h1>  
           <Form.Control
+            required
             onChange={(e) => this.handlerSearch(e)}
             type="search"
             className="searchInput"

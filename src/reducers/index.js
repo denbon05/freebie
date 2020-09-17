@@ -1,7 +1,6 @@
-// import _ from 'lodash';
+import _ from 'lodash';
 import { combineReducers } from 'redux';
 import { handleActions } from 'redux-actions';
-// import { reducer as formReducer } from 'redux-form';
 import * as actions from '../actions/index.js';
 
 const linksNav = {
@@ -84,12 +83,18 @@ const buttonFindMore = handleActions({
 
 const mailField = handleActions({
   [actions.subscribe](state) {
-
+    const { mailText, emailsIds, emailByID } = state;
+    state.subscribeOn = true;
+    const id = _.uniqueId();
+    state.emailByID[id] = { mail: mailText, id };
+    emailsIds.push(id);
+    return { mailText: '', ...state };
   },
   [actions.fillMail](state, { payload: { value } }) {
-
+    state.mailText = value;
+    return { ...state };
   }
-}, { mailText: '', subscribeOn: false });
+}, { mailText: '', subscribeOn: false, emailByID: {}, emailsIds: [] });
 
 export default combineReducers({
   linksNavState,

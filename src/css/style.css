@@ -135,6 +135,9 @@ body {
       font-weight: 400;
       line-height: 25px;
       line-height: 25px; }
+      .footerContainer .footerForm .mailInput:-webkit-autofill, .footerContainer .footerForm .mailInput:-webkit-autofill:hover, .footerContainer .footerForm .mailInput:-webkit-autofill:focus, .footerContainer .footerForm .mailInput:-webkit-autofill:active {
+        -webkit-box-shadow: 0 0 0 30px #131c25 inset !important;
+        -webkit-text-fill-color: white !important; }
       .footerContainer .footerForm .mailInput::-moz-placeholder {
         color: white; }
       .footerContainer .footerForm .mailInput::-webkit-input-placeholder {
@@ -142,7 +145,12 @@ body {
     .footerContainer .footerForm .mailButton {
       position: absolute;
       top: 15%;
-      right: 5%; }
+      right: 5%;
+      display: inline-block;
+      border: none;
+      text-decoration: none;
+      background: #131c25;
+      cursor: pointer; }
       .footerContainer .footerForm .mailButton .mailIcon {
         width: 1.5rem;
         height: 1.5rem;
