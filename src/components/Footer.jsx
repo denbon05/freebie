@@ -16,12 +16,13 @@ class Footer extends React.Component {
   handleSubscribrMail = (e) => {
     e.preventDefault();
     const { subscribe } = this.props;
-    
+    subscribe();
   }
 
   handlerMailChange = ({ target: { value } }) => {
     const { fillMail } = this.props;
-
+    fillMail(value);
+    
   }
 
   render() {
