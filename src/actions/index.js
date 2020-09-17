@@ -8,3 +8,6 @@ export const clickCheckbox = createAction("CLICK_CHECKBOX");
 export const choosingCoutnry = createAction("CHOSE_COUNTRY");
 
 export const clickFindMore = createAction("FIND_MORE");
+
+export const fillMail = createAction("MAIL_INPUT");
+export const subscribe = createAction("SUBSCRIBE");

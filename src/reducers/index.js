@@ -77,13 +77,24 @@ const formJobState = handleActions({
 
 const buttonFindMore = handleActions({
   [actions.clickFindMore](state) {
+
     return state === 'waiting' ? 'active' : 'waiting';
   }
 }, 'waiting');
+
+const mailField = handleActions({
+  [actions.subscribe](state) {
+
+  },
+  [actions.fillMail](state, { payload: { value } }) {
+
+  }
+}, { mailText: '', subscribeOn: false });
 
 export default combineReducers({
   linksNavState,
   buttonFindMore,
   formJobState,
+  mailField,
   // form: formReducer,
 });
