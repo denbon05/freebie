@@ -246,4 +246,7 @@ body {
       .headerGrid .navForm .buttonSearch {
         flex-basis: 150px;
         flex-shrink: 0;
-        align-self: flex-end; } }
+        align-self: flex-end; }
+  .mainContainerFlex h2 {
+    font-size: 25px;
+    white-space: nowrap; } }
