@@ -63,7 +63,8 @@ body {
       font-style: italic;
       font-weight: 400; }
     .headerGrid .navForm .searchInput {
-      flex-basis: 75%; }
+      flex-basis: 75%;
+      margin-bottom: 1rem; }
     .headerGrid .navForm .buttonSearch {
       flex-basis: 20%; }
     .headerGrid .navForm .navCheckboxs {
